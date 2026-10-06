@@ -615,41 +615,6 @@ function Footer() {
   );
 }
 
-/* ── Download banner ──────────────────────────────────────────────── */
-function DownloadBanner() {
-  return (
-    <div style={{
-      position: "fixed", bottom: "1.5rem", right: "1.5rem", zIndex: 200,
-      background: "#fff", border: `2px solid ${border}`,
-      borderRadius: "14px", padding: "1rem 1.4rem",
-      boxShadow: "0 8px 32px rgba(30,92,138,0.18)",
-      display: "flex", alignItems: "center", gap: "1rem",
-      maxWidth: "320px",
-    }}>
-      <div style={{ fontSize: "1.6rem" }}>📦</div>
-      <div style={{ flex: 1 }}>
-        <div style={{ fontFamily: "var(--font-display)", fontStyle: "italic", fontWeight: 700, color: ink, fontSize: "0.95rem", marginBottom: "0.2rem" }}>Download your site</div>
-        <div style={{ fontSize: "0.78rem", color: muted, marginBottom: "0.6rem" }}>All source files, ready to use</div>
-        <a
-          href="/markgyver-site.tar.gz"
-          download
-          style={{
-            display: "inline-block",
-            background: `linear-gradient(135deg, ${sky}, ${skyDeep})`,
-            color: "#fff", fontWeight: 600, fontSize: "0.85rem",
-            padding: "0.45rem 1.1rem", borderRadius: "50px",
-            textDecoration: "none", transition: "opacity 0.2s",
-          }}
-          onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-          onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
-        >
-          ⬇ Download .tar.gz
-        </a>
-      </div>
-    </div>
-  );
-}
-
 /* ── App ──────────────────────────────────────────────────────────── */
 export default function App() {
   const [lang, setLang] = useState<Lang>("en");
@@ -663,7 +628,6 @@ export default function App() {
         <WhyUs />
         <Contact />
         <Footer />
-        <DownloadBanner />
       </div>
     </LangCtx.Provider>
   );
